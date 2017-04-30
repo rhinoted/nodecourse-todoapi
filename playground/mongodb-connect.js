@@ -25,7 +25,7 @@ db.collection ('Users').insertOne({
   if(err) {
   return  console.log('unable to add item',err);
   }
-  console.log(JSON.stringify(result.ops,undefined,2));
+  console.log(JSON.stringify(result.ops,undefined,2)) ;
 });
 
 
