@@ -1,6 +1,6 @@
 var express=require('express');
 var bodyParser=require('body-parser');
-
+var port= process.env.PORT || 3000;
 
 const {ObjectID} = require('mongodb');
 var {mongoose}=require('./db/mongoose.js');
@@ -57,8 +57,8 @@ Todo.findById(id).then((todo)=>{
 });
 
 
-app.listen(3000,()=>{
-  console.log('Started at port 3000');
+app.listen(port,()=>{
+  console.log(`Started at port ${port}`);
 });
 
 
