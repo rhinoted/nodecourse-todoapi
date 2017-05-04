@@ -11,7 +11,9 @@ const todos= [{
   _id: new ObjectID()
 },{
   text:'second case',
-  _id: new ObjectID()
+  _id: new ObjectID(),
+  completed:true,
+  completedAt:3242323
 }];
 
 
@@ -165,6 +167,44 @@ it('Should return 404 if objectid is not valid',(done)=>{
 
 
 
+
+
+});
+
+
+
+
+describe('Patch todo with id',()=>{
+
+it('Should update the todo',(done)=>{
+var id=todos[0]._id.toHexString();
+request(app)
+.patch(`/todos/${id}`)
+.send({text:'test',completed:true})
+.expect(200)
+.expect((res)=>{
+  expect(res.body.todo.text).toBe('test');
+  expect(res.body.todo.completedAt).toBeA('number');
+}).end(done);
+
+});
+
+
+
+it('Should clear completedAt whe todo is not completed',(done)=>{
+var id=todos[1]._id.toHexString();
+
+request(app)
+.patch(`/todos/${id}`)
+.send({text:"test",completed:false})
+.expect(200)
+.expect((res)=>{
+  expect(res.body.todo.text).toBe('test');
+  expect(res.body.todo.completedAt).toNotExist();
+})
+.end(done);
+
+});
 
 
 });
