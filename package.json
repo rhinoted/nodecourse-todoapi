@@ -5,15 +5,24 @@
   "main": "index.js",
   "scripts": {
     "start": "node server/server.js",
+<<<<<<< HEAD
     "test": "export NODE_ENV=test || SET NODE_ENV=test && mocha server/**/*.test.js",
     "test-watch": "nodemon --exec 'npm test'"
   },
   "engines": {
     "node": "6.2.2"
+=======
+    "test": "export NODE_ENV=test || SET \"NODE_ENV=test\" && mocha server/**/*.test.js",
+    "test-watch": "nodemon --exec 'npm test'"
+  },
+  "engines": {
+    "node": "6.10.2"
+>>>>>>> 97d8561df94d180ba146b5e9938c43a7cc588a16
   },
   "author": "",
   "license": "ISC",
   "dependencies": {
+<<<<<<< HEAD
     "bcryptjs": "^2.3.0",
     "body-parser": "^1.15.2",
     "crypto-js": "^3.1.6",
@@ -29,5 +38,22 @@
     "mocha": "^3.0.2",
     "nodemon": "^1.10.2",
     "supertest": "^2.0.0"
+=======
+    "bcryptjs": "^2.4.3",
+    "body-parser": "^1.17.1",
+    "crypto-js": "^3.1.9-1",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^7.4.0",
+    "lodash": "^4.17.4",
+    "mongodb": "^2.2.26",
+    "mongoose": "^4.9.6",
+    "validator": "^7.0.0"
+  },
+  "devDependencies": {
+    "expect": "^1.20.2",
+    "mocha": "^3.3.0",
+    "nodemon": "^1.11.0",
+    "supertest": "^3.0.0"
+>>>>>>> 97d8561df94d180ba146b5e9938c43a7cc588a16
   }
 }

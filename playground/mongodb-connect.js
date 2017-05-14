@@ -1,11 +1,16 @@
+<<<<<<< HEAD
 // const MongoClient = require('mongodb').MongoClient;
 const {MongoClient, ObjectID} = require('mongodb');
+=======
+const MongoClient = require('mongodb').MongoClient;
+>>>>>>> 97d8561df94d180ba146b5e9938c43a7cc588a16
 
 MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   if (err) {
     return console.log('Unable to connect to MongoDB server');
   }
   console.log('Connected to MongoDB server');
+<<<<<<< HEAD
 
   // db.collection('Todos').insertOne({
   //   text: 'Something to do',
@@ -32,4 +37,33 @@ MongoClient.connect('mongodb://localhost:27017/TodoApp', (err, db) => {
   // });
 
   db.close();
+=======
+//
+// db.collection('Todos').insertOne({
+//   text: 'Something to do',
+//   completed: false
+// }, (err, result) => {
+//   if (err) {
+//     return console.log('Unable to insert todo', err);
+//   }
+//
+//   console.log(JSON.stringify(result.ops, undefined, 2));
+// });
+
+db.collection ('Users').insertOne({
+  name:'Cesare',
+  age:33,
+  location:'Prague'
+},(err,result)=>{
+  if(err) {
+  return  console.log('unable to add item',err);
+  }
+  console.log(JSON.stringify(result.ops,undefined,2)) ;
+});
+
+
+
+db.close();
+
+>>>>>>> 97d8561df94d180ba146b5e9938c43a7cc588a16
 });
